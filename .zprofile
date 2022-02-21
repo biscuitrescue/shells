@@ -1,1 +1,0 @@
-/home/karttikeya/.zprezto/runcoms/zprofile
