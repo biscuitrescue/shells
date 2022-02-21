@@ -1,0 +1,24 @@
+add_newline = true
+
+format = """
+ [┌─>](bold green) $hostname$username$sudo 
+ [│](bold green) $directory$git_branch$cmd_duration
+ [└─>](bold green) $character"""
+
+[character] 
+error_symbol = "[<✗> ➜](bold red) "
+success_symbol = "[<I> ➜](bold green)" 
+vicmd_symbol="[<N> ➜](bold green)"
+
+[sudo]
+disabled=false
+
+[status]
+disabled=false
+
+[hostname]
+ssh_only=false
+
+[username]
+show_always=true
+
