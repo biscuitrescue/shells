@@ -1,7 +1,7 @@
 add_newline = true
 
 format = """
- [┌─>](bold green) $hostname$username$sudo 
+ [┌─>](bold green) $username$hostname$sudo 
  [│](bold green) $directory$git_branch$cmd_duration
  [└─>](bold green) $character"""
 
