@@ -5,8 +5,7 @@ set TERM "xterm-256color"
 
 set fish_color_normal brwhite
 set fish_color_autosuggestion brgrey
-# set fish_color_command '#50fa7b'
-set fish_color_command brgreen
+set fish_color_command brgreen # '#50fa7b'
 set fish_color_error brred #'#ff5555'
 set fish_color_param brpurple
 
@@ -19,6 +18,7 @@ alias clone="git clone"
 alias pull="git pull"
 alias add="git add"
 alias rmm="git rm"
+alias remlist="git remote -v"
 alias commit="git commit"
 alias branch="git branch"
 alias addrem="git remote add"
@@ -37,16 +37,23 @@ alias vim='nvim'
 alias timetable='python3 $HOME/python/timetable.py'
 alias bstart='startx /usr/bin/bspwm'
 alias dstart='startx /usr/local/bin/dwm'
-alias rclear='clear && colorscript -e 32'
+alias rclear='/usr/bin/clear && colorscript -e 36'
 alias compdir='sshfs karttikeya@192.168.1.15:/home/karttikeya ~/sshfs'
 alias sushi="ssh sushi@43.231.56.189 -p 8224"
 alias sushifs="sshfs sushi@43.231.56.189:/home/sushi/ sshfs/ -p 8224"
+alias gentup="sudo emerge -avuDN --with-bdeps y @world"
+alias remerge="sudo emerge -ca"
+alias clean="sudo eclean-dist -d && sudo revdep-rebuild"
+alias clear='echo -en "\x1b[2J\x1b[1;1H" ; echo; echo; seq 1 (tput cols) | sort -R | spark | lolcat; echo; echo'
+
 
 function ipub
 	echo (drill myip.opendns.com @resolver1.opendns.com | awk '/myip/ {printf $5}')
 end
 
 echo 
-neofetch
-# python3 $HOME/python/timetable.py
+# echo -en "\x1b[2J\x1b[1;1H" ; echo; echo; seq 1 (tput cols) | sort -R | spark | lolcat; echo; echo
+colorscript -r
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 starship init fish | source
