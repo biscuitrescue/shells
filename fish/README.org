@@ -1,0 +1,24 @@
+#+title: My fish config
+
+* Fisher -> Required
+** Plugins
+- jorgebucaran/fisher
+- dracula/fish
+- jorgebucaran/fish-bax
+- joseluisq/gitnow@2.1.1
+- oh-my-fish/plugin-pj
+- jorgebucaran/hydro
+- franciscolourenco/done
+- jorgebucaran/autopair.fish
+
+* Commands
+#+begin_src fish
+fisher install jorgebucaran/fisher
+fisher installjorgebucaran/fish-bax
+fisher install dracula/fish
+fisher installjoseluisq/gitnow@2.1.1
+fisher installoh-my-fish/plugin-pj
+fisher installjorgebucaran/hydro
+fisher installfranciscolourenco/done
+fisher installjorgebucaran/autopair.fis
+#+end_src
