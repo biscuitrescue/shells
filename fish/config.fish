@@ -14,7 +14,7 @@ set fish_color_normal brwhite
 set fish_color_autosuggestion brgrey
 set fish_color_command brgreen # '#50fa7b'
 set fish_color_error brred #'#ff5555'
-set fish_color_param brpurple
+set fish_color_param brblue
 
 
 fish_vi_key_bindings
@@ -44,6 +44,7 @@ alias l.='exa -a | egrep "^\."'
 alias vim='nvim'
 alias timetable='python3 $HOME/lang/python/timetable.py'
 alias bstart='startx /usr/bin/bspwm'
+alias openstart='startx /usr/bin/openbox-session'
 alias dstart='startx /usr/local/bin/dwm'
 alias rclear='/usr/bin/clear && colorscript -e 36'
 alias compdir='sshfs mr_robot@192.168.1.20:/home/mr_robot ~/sshfs'
@@ -53,10 +54,11 @@ alias gentup="sudo emerge -avuDN --with-bdeps y @world"
 alias remerge="sudo emerge -ca"
 alias clean="sudo eclean-dist -d && sudo revdep-rebuild"
 alias clear='echo -en "\x1b[2J\x1b[1;1H" ; echo; echo; seq 1 (tput cols) | sort -R | sparklines | lolcat; echo; echo'
-alias pipes="pipes-rs -k curved -p 3 -t 0.13 -r 0.3"
+alias pipes="pipes-rs -k curved -p 3 -t 0.13 -r 0.6"
 alias ":q"="exit"
 alias nosleep="sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
 alias yesleep="sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target"
+alias bsdk="lsblk"
 
 function getc
 	gcc -dM -E - < /dev/null | grep __STDC_VERSION__ | awk '{ print $2 " --> " $3 }'
@@ -68,4 +70,4 @@ function ipub
 end
 
 rxfetch
-starship init fish | source
+# starship init fish | source
